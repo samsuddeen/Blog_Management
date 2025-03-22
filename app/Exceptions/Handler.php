@@ -27,4 +27,37 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    /**
+     * Render an exception into an HTTP response.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Throwable  $e
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function render($request, Throwable $e)
+    {
+        if ($this->isHttpException($e)) {
+            $statusCode = $e->getStatusCode();
+
+            switch ($statusCode) {
+                case 401:
+                    return response()->view('errors.401', [], 401);
+                case 403:
+                    return response()->view('errors.403', [], 403);
+                case 419:
+                    return response()->view('errors.419', [], 419);
+                case 429:
+                    return response()->view('errors.429', [], 429);
+                case 500:
+                    return response()->view('errors.500', [], 500);
+            }
+        }
+        
+        if ($e instanceof \Illuminate\Session\TokenMismatchException) {
+            return response()->view('errors.419', [], 419);
+        }
+
+        return parent::render($request, $e);
+    }
 }
