@@ -19,7 +19,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                     </svg>
                                 </div>
-                                <span class="text-gray-800 font-medium">{{ Auth::user()->name }}</span>
+                                <span class="text-gray-800 font-medium">{{ Auth::user()->name ?? 'Unknown' }}</span>
                             </div>
                         </div>
                         <nav class="p-4">
@@ -65,11 +65,11 @@
                                     </div>
                                     <h3 class="text-lg font-semibold text-gray-800">Profile</h3>
                                 </div>
-                                <p class="text-gray-600 mb-4 text-sm">Manage your profile information here.</p>
+                                <p class="text-gray-600 mb-4 text-sm">Your profile information here.</p>
                                 <ul class="space-y-3">
                                     <li class="flex items-center p-3 bg-blue-50 rounded-md shadow-sm">
                                         <span class="text-gray-700 font-medium min-w-24">Name:</span>
-                                        <span class="text-gray-800 ml-2">{{ Auth::user()->name }}</span>
+                                        <span class="text-gray-800 ml-2">{{ Auth::user()->name ?? 'Unknown' }}</span>
                                     </li>
                                     <li class="flex items-center p-3 bg-blue-50 rounded-md shadow-sm">
                                         <span class="text-gray-700 font-medium min-w-24">Email:</span>

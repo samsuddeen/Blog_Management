@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "097d01c3-4f67-4c32-bbd3-7db975856006",
+		"name": "Blog management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34881594",
+		"_collection_link": "https://xuoot5.postman.co/workspace/xuoot-Workspace~22ce14ca-7616-4f59-8fff-3a97de295079/collection/34881594-097d01c3-4f67-4c32-bbd3-7db975856006?action=share&source=collection_link&creator=34881594"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login?email=admin@gmail.com&password=admin123",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "admin@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "admin123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Blogs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|yCZGQoJgK9VAmR2mB4btMjS9pvRcGqnjVOroGRCJc07d3cd7",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/blogs",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show blogs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|yCZGQoJgK9VAmR2mB4btMjS9pvRcGqnjVOroGRCJc07d3cd7",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/blog/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"blog",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "store blogs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|yCZGQoJgK9VAmR2mB4btMjS9pvRcGqnjVOroGRCJc07d3cd7",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"My First Blog\",\r\n    \"content\": \"This is a sample blog content\",\r\n    \"category_id\": 2,\r\n    \"status\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/blog_store",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"blog_store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update blogs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|yCZGQoJgK9VAmR2mB4btMjS9pvRcGqnjVOroGRCJc07d3cd7",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"My First testing\",\r\n    \"content\": \"This is a sample blog\",\r\n    \"category_id\": 2,\r\n    \"status\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/blog/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"blog",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete blogs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|yCZGQoJgK9VAmR2mB4btMjS9pvRcGqnjVOroGRCJc07d3cd7",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/blog/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"blog",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
