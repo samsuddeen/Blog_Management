@@ -39,6 +39,14 @@ class BlogController extends Controller
         }
     }
 
+    public function show(Blog $blog)
+    {
+        $categories = Category::where('status', true)->get();
+
+        return view('admin.blogs.show', compact('blog','categories'));
+    }
+
+
     public function edit(Blog $blog)
     {
         $categories = Category::where('status', true)->get();

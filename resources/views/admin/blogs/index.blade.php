@@ -126,14 +126,14 @@
                                                                 </div>
                                                             </td>
                                                             <td>
-                                                                {{-- <a href="{{ route('blog.show', $blog->id) }}"
+                                                                <a href="{{ route('blog.show', $blog->id) }}"
                                                                     class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
                                                                     data-template="eyeOne">
                                                                     <i data-feather="eye" class="icon-xs"></i>
                                                                     <div id="eyeOne" class="d-none">
                                                                         <span>View</span>
                                                                     </div>
-                                                                </a> --}}
+                                                                </a>
                                                                 <a href="{{ route('blog.edit', $blog->id) }}"
                                                                     class="btn btn-ghost btn-icon btn-sm rounded-circle texttooltip"
                                                                     data-template="editOne">
